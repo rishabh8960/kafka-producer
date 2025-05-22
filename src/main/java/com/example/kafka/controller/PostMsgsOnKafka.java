@@ -1,7 +1,6 @@
 package com.example.kafka.controller;
 
-import com.example.kafka.setvice.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerRecord;
+import com.example.kafka.service.KafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +12,6 @@ public class PostMsgsOnKafka {
     private KafkaProducer kafkaProducer;
 
     @PostMapping("/send")
-
     public String sendMessageToKafka(
             @RequestParam int start,
             @RequestParam int end,

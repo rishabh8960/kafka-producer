@@ -1,4 +1,4 @@
-package com.example.kafka.setvice;
+package com.example.kafka.service;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 public class KafkaProducer {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
-
 
     public void sendMessage(String topic, String message, String id) {
         ProducerRecord<String, String> record = new ProducerRecord<>(topic, message);
