@@ -17,7 +17,7 @@ public class PostMsgsOnKafka {
             @RequestParam int end,
             @RequestHeader("id") String id) {
         for (int i = start; i <= end; i++) {
-            String message = "Message for iteration: " + i;
+            String message =  String.valueOf(i);
             kafkaProducer.sendMessage("Uniper_Topic", message, id);
         }
         return "Messages sent to Kafka for range: " + start + " to " + end;
